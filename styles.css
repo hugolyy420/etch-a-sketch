@@ -16,12 +16,13 @@ body {
     flex-wrap: wrap;
     height: 400px;
     width: 400px;
+    border: 0.5px solid black;
 }
 
 .container>div {
-    border: 0.5px solid black;
-    height: 25px;
-    width: 25px;
+    /* border: 0.5px solid black; */
+    /* height: 25px;
+    width: 25px; */
 }
 
 .change-color {
