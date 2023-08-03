@@ -22,8 +22,8 @@ for (let i = 1; i < total; i++) {
     gridContainer.appendChild(smallGrid);
 }}
 
-function changeBlack (e) {
-        e.target.style.backgroundColor = "black";
+function changeColor (e) {
+        e.target.style.backgroundColor = colorPicker.value;
     }
 
 function changeRandomColor (e) {
@@ -37,7 +37,7 @@ function changeRandomColor (e) {
 function addColorChange () {
     let grids = document.querySelectorAll(".small-grid");     
     grids.forEach((grid) => { 
-        grid.addEventListener("mouseover", changeBlack)}
+        grid.addEventListener("mouseover", changeColor)}
     );
 }
 
@@ -49,10 +49,20 @@ slider.addEventListener('mouseup', function () {
         gridContainer.removeChild(gridContainer.lastChild);
     }
     makeGrids(slider.value);
+    if (rainbowBtn.classList.contains("clicked-button")) {
+            let grids = document.querySelectorAll(".small-grid");     
+            grids.forEach((grid) => {
+                grid.addEventListener("mouseover", function (e) {
+                    changeRandomColor(e);
+                })}
+            );
+    } else {
     addColorChange();
+    }
 })
 
 colorPicker.addEventListener('input', function (e){
+    rainbowBtn.classList.remove("clicked-button");
     let grids = document.querySelectorAll(".small-grid");
     let selectedColor = e.target.value;   
     grids.forEach((grid) => {
@@ -63,6 +73,7 @@ colorPicker.addEventListener('input', function (e){
 })
 
 rainbowBtn.addEventListener("click", function () {
+    rainbowBtn.classList.add("clicked-button");
     let grids = document.querySelectorAll(".small-grid");     
     grids.forEach((grid) => {
         grid.addEventListener("mouseover", function (e) {
