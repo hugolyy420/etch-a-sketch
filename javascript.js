@@ -1,6 +1,8 @@
 const gridContainer = document.querySelector(".container");
 const rainbowBtn = document.querySelector("#rainbow");
 const colorPicker = document.querySelector("#colorpicker");
+const shadingBtn = document.querySelector("#shading");
+const colorBtn = document.querySelector("#color");
 let interval = null;
 let slider = document.getElementById("myRange");
 let output = document.getElementById("demo");
@@ -61,6 +63,18 @@ slider.addEventListener('mouseup', function () {
     }
 })
 
+colorBtn.addEventListener("click", function(e) {
+    colorBtn.classList.add("clicked-button");
+    shadingBtn.classList.remove("clicked-button");
+    rainbowBtn.classList.remove("clicked-button");
+    let grids = document.querySelectorAll(".small-grid");  
+    grids.forEach((grid) => {
+        grid.addEventListener("mouseover", function (e) {
+            e.target.style.backgroundColor = colorPicker.value;
+        })}
+    );
+})
+    
 colorPicker.addEventListener('input', function (e){
     rainbowBtn.classList.remove("clicked-button");
     let grids = document.querySelectorAll(".small-grid");
@@ -74,6 +88,8 @@ colorPicker.addEventListener('input', function (e){
 
 rainbowBtn.addEventListener("click", function () {
     rainbowBtn.classList.add("clicked-button");
+    shadingBtn.classList.remove("clicked-button");
+    colorBtn.classList.remove("clicked-button");
     let grids = document.querySelectorAll(".small-grid");     
     grids.forEach((grid) => {
         grid.addEventListener("mouseover", function (e) {
@@ -82,6 +98,17 @@ rainbowBtn.addEventListener("click", function () {
     );
 })
 
+shadingBtn.addEventListener('click', function (e){
+    shadingBtn.classList.add("clicked-button");
+    rainbowBtn.classList.remove("clicked-button");
+    colorBtn.classList.remove("clicked-button");
+    let grids = document.querySelectorAll(".small-grid");  
+    grids.forEach((grid) => {
+        grid.addEventListener("mouseover", function (e) {
+            e.target.style.opacity = parseFloat(e.target.style.opacity || 0) + 0.1;
+        })}
+    );
+})
 
 
 
