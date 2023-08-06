@@ -48,12 +48,6 @@ header {
     background-color: #fff;
 }
 
-.container>div {
-    /* border: 0.5px solid black; */
-    /* height: 25px;
-    width: 25px; */
-}
-
 .slidecontainer {
     display: flex;
     flex-direction: column;
