@@ -8,17 +8,20 @@
     <script  defer src="javascript.js"></script>
 </head>
 <body>
-    <div>
-        <input type="color" id="colorpicker" value="#000000">
-        <button id="color" class="button">Color Mode</button>
-        <button id="rainbow" class= "button">RGB</button>
-        <button id="shading" class= "button">Shading</button>
-        <div class="slidecontainer">
-            <input type="range" min="1" max="64" value="16" class="slider" id="myRange">
-            <div id="demo"></div>
+    <header class="header"><h1>Etch-a-Sketch</h1></header>
+    <div class="big-container">
+        <div class="side-container">
+            <input type="color" id="colorpicker" value="#000000">
+            <button id="color" class="button">Color Mode</button>
+            <button id="rainbow" class= "button">RGB</button>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="64" value="16" class="slider" id="myRange">
+                <div id="demo"></div>
+            </div>
+        </div>
+        <div class="container">
         </div>
     </div>
-    <div class="container">
-    </div>
+    <footer class="footer">Copyright © 2023 hugounique</footer>
 </body>
 </html>

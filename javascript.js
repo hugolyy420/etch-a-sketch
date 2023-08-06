@@ -65,7 +65,6 @@ slider.addEventListener('mouseup', function () {
 
 colorBtn.addEventListener("click", function(e) {
     colorBtn.classList.add("clicked-button");
-    shadingBtn.classList.remove("clicked-button");
     rainbowBtn.classList.remove("clicked-button");
     let grids = document.querySelectorAll(".small-grid");  
     grids.forEach((grid) => {
@@ -88,7 +87,6 @@ colorPicker.addEventListener('input', function (e){
 
 rainbowBtn.addEventListener("click", function () {
     rainbowBtn.classList.add("clicked-button");
-    shadingBtn.classList.remove("clicked-button");
     colorBtn.classList.remove("clicked-button");
     let grids = document.querySelectorAll(".small-grid");     
     grids.forEach((grid) => {
@@ -98,17 +96,18 @@ rainbowBtn.addEventListener("click", function () {
     );
 })
 
-shadingBtn.addEventListener('click', function (e){
-    shadingBtn.classList.add("clicked-button");
-    rainbowBtn.classList.remove("clicked-button");
-    colorBtn.classList.remove("clicked-button");
-    let grids = document.querySelectorAll(".small-grid");  
-    grids.forEach((grid) => {
-        grid.addEventListener("mouseover", function (e) {
-            e.target.style.opacity = parseFloat(e.target.style.opacity || 0) + 0.1;
-        })}
-    );
-})
+// shadingBtn.addEventListener('click', function (e){
+//     shadingBtn.classList.add("clicked-button");
+//     rainbowBtn.classList.remove("clicked-button");
+//     colorBtn.classList.remove("clicked-button");
+//     let grids = document.querySelectorAll(".small-grid");  
+//     grids.forEach((grid) => {
+//         grid.addEventListener("mouseover", function (e) {
+//             console.log(e.target.style.backgroundColor);
+//             pSBC(e.target.style.backgroundColor, 0.1)
+//         })}
+//     );
+// })
 
 
 
